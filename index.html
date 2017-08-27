@@ -3,25 +3,69 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div>
       <div>
-        <h1>Calculating ROI: Website Optimisation</h1><img src="img/400wideewebbanner.png" alt=""></a><p>There is value in optimizing your website. How much value? Depending on your desired outcomes, the ZAAZ Calculator is designed to estimate the return on investment. Plug in the numbers and see how it changes the present and future value of your business.</p>
+        <h1 id="test">Calculating ROI: Website Optimisation</h1><img src="img/400wideewebbanner.png" alt=""></a><p>There is value in optimizing your website. How much value? Depending on your desired outcomes, the ZAAZ Calculator is designed to estimate the return on investment. Plug in the numbers and see how it changes the present and future value of your business.</p>
       </div>
       <hr>
       <form>
         <h2>Current site Behavior</h2>
-        <h3>Total Average Monthly Site Visits</h3><textarea id="totalAverage" name="totalAverage" rows="1" cols=""></textarea><img class="questionMark" alt="" height="24" width="24" title="Enter number of site visitors here. This may be fore your entire site or a section of it." src="img/tooltip-img.png"</a>
+        <h3>Total Average Monthly Site Visits</h3><textarea id="totalAverage" name="totalAverage" rows="1" cols="15"></textarea><img class="questionMark" alt="" height="24" width="24" title="Enter number of site visitors here. This may be fore your entire site or a section of it." src="img/tooltip-img.png"</a>
         <h3>Average Monthly Success Events</h3><textarea id="averageSuccess" name="averageSuccess" rows="1" cols="15"></textarea><img class="questionMark" alt="" height="24" width="24" title="Enter number of targeted site behavior completions or conversions for a given month. This number should be a subset of the Monthly Site Visits. This can be any kind of success event(purchase, lead conversion, add item to cart)" src="img/tooltip-img.png"</a><p>Indentify specific targeted behaviour (lead conversion, sale conversion, etc.)</p>
-        <h3>Success Event Conversion Rates</h3><textarea id="successConversionRate" name="successConversionRate" rows="1" cols="15"></textarea><p>%</p><img class="questionMark" alt="" height="24" width="24" title="Success Event Conversion Rate is automatically calculated by dividing average monthly success event conversions by total average monthly site behaviors." src="img/tooltip-img.png"</a><p>Shows success event conversion from total site visits</p>
+        <h3>Success Event Conversion Rate</h3><textarea id="successConversionRate" name="successConversionRate" rows="1" cols="15" readonly></textarea><p>%</p><img class="questionMark" alt="" height="24" width="24" title="Success Event Conversion Rate is automatically calculated by dividing average monthly success event conversions by total average monthly site behaviors." src="img/tooltip-img.png"</a><p>Shows success event conversion from total site visits</p>
         <h3>Enter Average Value of a Success Event Visit</h3><p>$</p><textarea id="averageValue" name="averageValue" rows="1" cols="15"></textarea><img class="questionMark" alt="" height="24" width="24" title="Enter the average value associated with a single success event. Example: each visit is worth $20 on average" src="img/tooltip-img.png"</a><p>Average value of lead/sales conversion</p>
         <hr>
         <h2>Potential Improvement</h2>
-        <h3>Increase Site Traffic by X%</h3><textarea id="increaseTraffic" name="increaseTraffic" rows="1" cols="15"></textarea><p>%</p><img class="questionMark" alt="" height="24" width="24" title="Enter number of site visitors here. This may be fore your entire site or a section of it." src="img/tooltip-img.png"</a>
-        <h3>Increase Conversion by X%</h3><textarea id="increaseConversion" name="increaseConversion" rows="1" cols="15"></textarea><p>%</p><img class="questionMark" alt="" height="24" width="24" title="Enter number of site visitors here. This may be fore your entire site or a section of it." src="img/tooltip-img.png"</a>
-        <h3>Estimated Cost to Improve Performance</h3><p>$</p><textarea id="estimatedCost" name="estimatedCost" rows="1" cols="15"></textarea><img class="questionMark" alt="" height="24" width="24" title="Enter number of site visitors here. This may be fore your entire site or a section of it." src="img/tooltip-img.png"</a>
+        <h3>Increase Site Traffic by X%</h3><textarea id="increaseTraffic" name="increaseTraffic" rows="1" cols="15"></textarea><p>%</p><img class="questionMark" alt="" height="24" width="24" title="Enter a percentege between 1% & 100%" src="img/tooltip-img.png"</a><p>Enter a value (percentege) of the potential increase in site traffic ( example 10%).</p>
+        <h3>Increase Conversion by X%</h3><textarea id="increaseConversion" name="increaseConversion" rows="1" cols="15"></textarea><p>%</p><img class="questionMark" alt="" height="24" width="24" title="Enter a percentege between 1% & 100%" src="img/tooltip-img.png"</a><p>Enter a value (percentege) of the potential increase in site conversion ( example 10%).</p>
+        <h3>Estimated Cost to Improve Performance</h3><p>$</p><textarea id="estimatedCost" name="estimatedCost" rows="1" cols="15"></textarea><img class="questionMark" alt="" height="24" width="24" title="Enter the estimated company cost required to optimise this site behavior. This value will be subtracted from the estimated ROI to show actual profit( See calculated outputs below)" src="img/tooltip-img.png"</a><p>Enter estimated costs to optimise indentified behaviours (eg., agency fees, marketing and/or operational costs)</p>
+        <hr>
+        <h2>Estimated Impact of Site Optimisation</h2>
+        <img id="monthly" src="img/monthly.png"></a><p>Monthly</p><img id="anually" src="img/annually.png"></a><p>Annually</p>
+        <h3>Current Value</h3><span class="currentValueMonthly">$0</span><span class="currentValueAnnually">$0</span>
+        <h3>Estimated Future Value</h3><span class="estimatedFutureMonthly">$0</span><span class="estimatedFutureAnnually">$0</span>
+        <h3>Incremental Value</h3><span class="incrementalValueMonthly">$0</span><span class="incrementalValueAnnually">$0</span>
+        <h3>Incremental Success Events</h3><span class="incrementalSuccessValueMonthly">$0</span><span class="incrementalSuccessValueAnnually">$0</span>
+        <h3>ROI</h3><span class="roiMonthly">$0</span><span class="roiAnnually">$0</span>
+        <hr>
+        <table>
+          <tr>
+            <th></th>
+            <th>Monthly</th>
+            <th>Annually</th>
+          </tr>
+          <tr>
+            <td>Current Value</td>
+            <td class="currentValueMonthly">$0</td>
+            <td class="currentValueAnnually">$0</td>
+          </tr>
+          <tr>
+            <td>Estimated Future Value</td>
+            <td class="estimatedFutureMonthly">$0</td>
+            <td class="estimatedFutureAnnualy">$0</td>
+          </tr>
+          <tr>
+            <td>Incremental Value</td>
+            <td class="incrementalValueMonthly">$0</td>
+            <td class="incrementalValueAnnualy">$0</td>
+          </tr>
+          <tr>
+            <td>Incremental Success Events</td>
+            <td class="incrementalSuccessValueMonthly">$0</td>
+            <td class="incrementalSuccessValueAnnualy">$0</td>
+          </tr>
+          <tr>
+            <td>ROI</td>
+            <td class="roiMonthly"></td>
+            <td class="roiAnnualy"></td>
+          </tr>
+        </table>
       </form>
     </div>
+    <script src="js/jq.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

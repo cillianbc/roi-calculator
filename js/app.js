@@ -14,7 +14,7 @@ let incrementalValueMonthly = document.querySelector(".incrementalValueMonthly")
 let incrementalValueAnnually = document.querySelector(".incrementalValueAnnually")
 let incrementalSuccessMonthly = document.querySelector(".incrementalSuccessValueMonthly")
 let incrementalSuccessAnnually = document.querySelector(".incrementalSuccessValueAnnually")
-let roiannually = document.querySelector(".roiMonthly")
+let roiMonthly = document.querySelector(".roiMonthly")
 let roiAnnually = document.querySelector(".roiAnnually")
 
 let state = {
@@ -42,69 +42,33 @@ function stateRest(state) {
     state.roiAnnually=0;
 }
 
-// finalUrl.onkeyup = function(){
-//   buildchart()
-// }
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function loopClassesCurrentValue(month,annual){
-  var month = document.querySelectorAll(month);
-  var annual = document.querySelectorAll(annual);
+function loopClassesCurrentValue(){
+  // var month = document.querySelector(month);
+  // var annual = document.querySelector(annual);
   state.currentValueMonthly = Number(enterAverageValueofaSuccessEventVisit.value) * Number(averageMonthlySuccessEvents.value)
   state.currentValueAnnually = state.currentValueMonthly*12
-  var index = 0, length = month.length;
-    for ( ; index < length; index++) {
-      month[index].innerHTML = "$"+numberWithCommas(state.currentValueMonthly)
-    }
-  var index = 0, length = annual.length;
-    for ( ; index < length; index++) {
-      annual[index].innerHTML = "$"+numberWithCommas(state.currentValueAnnually)
-    }
+  // var index = 0, length = month.length;
+  //   for ( ; index < length; index++) {
+      currentValueMonthly.innerHTML = "$"+numberWithCommas(state.currentValueMonthly)
+    // }
+  // var index = 0, length = annual.length;
+  //   for ( ; index < length; index++) {
+      currentValueAnnually.innerHTML = "$"+numberWithCommas(state.currentValueAnnually)
+    // }
   // var index = 0, length = annual.length;
   //   for ( ; index < length; index++) {
   //     annual[index].innerHTML = "$"+(numberWithCommas(state.currentValueAnnually)
   //   }
 }
 
-function loopClassesIncremental(incmonth,incannual,successmonth,successannual,roiAnnual,roiMonthly,state){
-  var incmonths = document.querySelectorAll(incmonth);
-  var incannuals = document.querySelectorAll(incannual);
-  var successmonths = document.querySelectorAll(successmonth);
-  var successannuals = document.querySelectorAll(successannual);
-  var roimonths = document.querySelectorAll(roiMonthly);
-  var roiannuals = document.querySelectorAll(roiAnnual);
-  console.log(successannuals)
-  var index = 0, length = incmonths.length;
-    for ( ; index < length; index++) {
-      incmonths[index].innerHTML = "$"+numberWithCommas(state.incrementalValueMonthly)
-    }
-  var index = 0, length = successmonths.length;
-    for ( ; index < length; index++) {
-      successmonths[index].innerHTML = numberWithCommas(state.incrementalSuccessMonthly)
-    }
-    var index = 0, length = incannuals.length;
-      for ( ; index < length; index++) {
-        incannuals[index].innerHTML = "$"+numberWithCommas(state.incrementalValueAnnually)
-      }
-    var index = 0, length = successannuals.length;
-      for ( ; index < length; index++) {
-        successannuals[index].innerHTML = numberWithCommas(state.incrementalSuccessAnnually)
-      }
-    var index = 0, length = roimonths.length;
-      for ( ; index < length; index++) {
-        roimonths[index].innerHTML = numberWithCommas(state.roiMonthly) +"%"
-      }
-    var index = 0, length = roiannuals.length;
-      for ( ; index < length; index++) {
-        roiannuals[index].innerHTML = numberWithCommas(state.roiAnnually) +"%"
-      }
-}
 
-function loopClassesFutureValue(month,annual,conversionRate){
-  var month = document.querySelectorAll(month);
-  var annual = document.querySelectorAll(annual);
+function loopClassesFutureValue(conversionRate){
+  // var month = document.querySelectorAll(month);
+  // var annual = document.querySelectorAll(annual);
   var newTrafficMonthly = totalAverageMonthlySiteVisits.value * (1.+(increaseSiteTrafficbyX.value/100))
   var newConversionperc = Number(increaseConversionbyX.value) + conversionRate
   var newConversionEvents = (newTrafficMonthly /100)*newConversionperc
@@ -118,22 +82,55 @@ function loopClassesFutureValue(month,annual,conversionRate){
   state.incrementalSuccessAnnually= state.incrementalSuccessMonthly *12
   state.roiMonthly = (state.estimatedFutureMonthly / estimatedCosttoImprovePerformance.value) *100
   state.roiAnnually = state.roiMonthly *12
-  var index = 0, length = month.length;
-    for ( ; index < length; index++) {
-      month[index].innerHTML = "$"+numberWithCommas(newMonthly)
-    }
-  var index = 0, length = annual.length;
-    for ( ; index < length; index++) {
-      annual[index].innerHTML = "$"+numberWithCommas(newAnnual)
-    }
-  loopClassesIncremental(".incrementalValueMonthly",".incrementalValueAnnually",".incrementalSuccessValueMonthly",".incrementalSuccessValueAnnually",".roiAnnually",".roiMonthly",state)
+  // var index = 0, length = month.length;
+  //   for ( ; index < length; index++) {
+      estimatedFutureMonthly.innerHTML = "$"+numberWithCommas(newMonthly.toFixed(0))
+    // }
+  // var index = 0, length = annual.length;
+  //   for ( ; index < length; index++) {
+      estimatedFutureAnnually.innerHTML = "$"+numberWithCommas(newAnnual.toFixed(0))
+    // }
+
 }
 
-
+function loopClassesIncremental(){
+  // var incmonths = document.querySelectorAll(incmonth);
+  // var incannuals = document.querySelectorAll(incannual);
+  // var successmonths = document.querySelectorAll(successmonth);
+  // var successannuals = document.querySelectorAll(successannual);
+  // var roimonths = document.querySelectorAll(roiMonthly);
+  // var roiannuals = document.querySelectorAll(roiAnnual);
+  // console.log(successannuals)
+  // var index = 0, length = incmonths.length;
+  //   for ( ; index < length; index++) {
+      incrementalValueMonthly.innerHTML = "$"+numberWithCommas(state.incrementalValueMonthly.toFixed(0))
+    // }
+  // var index = 0, length = successmonths.length;
+  //   for ( ; index < length; index++) {
+      incrementalSuccessMonthly.innerHTML = numberWithCommas(state.incrementalSuccessMonthly.toFixed(0))
+    // }
+    // var index = 0, length = incannuals.length;
+    //   for ( ; index < length; index++) {
+        incrementalValueAnnually.innerHTML = "$"+numberWithCommas(state.incrementalValueAnnually.toFixed(0))
+      // }
+    // var index = 0, length = successannuals.length;
+    //   for ( ; index < length; index++) {
+        incrementalSuccessAnnually.innerHTML = numberWithCommas(state.incrementalSuccessAnnually.toFixed(0))
+      // }
+    // var index = 0, length = roimonths.length;
+    //   for ( ; index < length; index++) {
+        roiMonthly.innerHTML = numberWithCommas(state.roiMonthly.toFixed(2)) +"%"
+      // }
+    // var index = 0, length = roiannuals.length;
+    //   for ( ; index < length; index++) {
+        roiAnnually.innerHTML = numberWithCommas(state.roiAnnually.toFixed(2)) +"%"
+      // }
+}
 
 function populateData() {
   conversionRate = (averageMonthlySuccessEvents.value / totalAverageMonthlySiteVisits.value)*100
   successEventConversionRates.innerHTML = conversionRate
-  loopClassesCurrentValue(".currentValueMonthly",".currentValueAnnually",)
-  loopClassesFutureValue(".estimatedFutureMonthly",".estimatedFutureAnnually",conversionRate)
+  loopClassesCurrentValue()
+  loopClassesFutureValue(conversionRate)
+  loopClassesIncremental()
 }

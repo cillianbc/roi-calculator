@@ -1,3 +1,86 @@
 textarea {
     resize: none;
 }
+
+#sumbit_roi {
+	border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    height: 52px;
+    letter-spacing: 1px;
+    line-height: 50px;
+    padding: 0 60px;
+    text-transform: uppercase;
+    transition: color 0.15s ease-out 0s, background-color 0.15s ease-out 0s, border-color 0.15s ease-out 0s;
+    width: auto;
+    background-color: #dd3333;
+	margin-bottom:40px;
+}
+
+.wp-caption, img {
+    max-width: initial;
+    height: 16px;
+}
+
+.questionMark {
+  height:auto;
+}
+
+h2{
+  font-size:20px;
+  color:#323232; 
+  padding-bottom:10px;
+}
+
+h3 {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  color:#4c4c4c;
+  font-size: 15px; 
+  display:inline; 
+ font-weight:600; 
+padding-right:5px; 
+}
+
+.left_side {
+   float:left;
+   width:50%;
+}
+
+p {
+  font-size:10px;
+}
+
+.right_side {
+  float:left;
+  width:50%;
+}
+
+.right_side table{
+  margin-top:80px;
+}
+
+.qodef-title {    
+  background-image: url("http://www.ewebmarketing.com.au/wp-content/uploads/2016/07/tech-background-image-2.jpg") !important;
+}
+
+
+.custom-row-color-changer a {
+  color:#ffffff;
+}
+
+.qodef-content .qodef-container .qodef-container-inner { 
+  padding-top:30px;
+}
+
+@media screen and (max-width: 768px) {
+	.left_side { width:100%; float:none; } 
+	.right_side { width:100%; float:none; } 	
+	.right_side table{
+		margin-top:10px;
+	}
+}

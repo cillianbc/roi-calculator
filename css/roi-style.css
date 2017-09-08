@@ -1,0 +1,128 @@
+input[type="text"] {
+    width: 95px;
+	padding: 4px;
+    border: 3px solid #4C4C1B;
+    background: #fff;
+    outline: 0;
+}
+
+#successConversionRate  {
+	width: 98px;
+    border: 1px solid #4C4C1B;
+    background: #fff;
+    outline: 0;
+	height:19px;
+}
+
+#sumbit_roi {
+	border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    height: 52px;
+    letter-spacing: 1px;
+    line-height: 50px;
+    padding: 0 60px;
+    text-transform: uppercase;
+    transition: color 0.15s ease-out 0s, background-color 0.15s ease-out 0s, border-color 0.15s ease-out 0s;
+    width: auto;
+    background-color: #dd3333;
+	margin-bottom:40px;
+}
+
+.wp-caption{
+    max-width: initial;
+    height: 16px;
+}
+
+.graph{
+  height:30px;
+}
+
+#monthly, #anually{
+  height:30px;
+}
+
+.questionMark {
+  height:auto;
+}
+
+
+
+h2{
+  font-size:20px;
+  color:#323232;
+  padding-bottom:22px;
+  text-align: right;
+  padding-right: 10%;
+}
+.left_side h3{
+  font-weight:1600;
+}
+h3 {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  color:#4c4c4c;
+  font-size: 15px;
+  display:inline;
+ font-weight:600;
+}
+
+.left_side {
+   float:left;
+   width:50%;
+    padding-right:5%;
+}
+
+p {
+  font-size:10px;
+}
+
+.right_side {
+  float:left;
+  width:45%;
+
+}
+
+.right_side table{
+  margin-top:80px;
+}
+
+.qodef-title {
+  background-image: url("http://www.ewebmarketing.com.au/wp-content/uploads/2016/07/tech-background-image-2.jpg") !important;
+}
+
+.custom-row-color-changer a {
+  color:#ffffff;
+}
+
+.qodef-content .qodef-container .qodef-container-inner {
+  padding-top:30px;
+}
+
+.inner_main_div {
+  clear:both;
+  text-align: right;
+  padding-bottom: 24px;
+}
+
+.inner_left_div { display: inline-block; padding-right:6px; }
+
+.inner_right_div {display: inline-block; }
+
+.inner_left_div b { font-size:20px; }
+
+
+@media screen and (max-width: 768px) {
+	.left_side { width:100%; float:none;  padding-right:0%; }
+	.right_side { width:100%; float:none; }
+	 h2 { text-align:left; padding-right:0px;  }
+	 h3 { font-size:13px; padding-right:0px; }
+    .inner_main_div	 { text-align: initial; padding-bottom:15px;  }
+	.inner_left_div { padding-right:0px; }
+	.inner_right_div { padding-top:7px; }
+
+}
